@@ -1,7 +1,11 @@
 // 람다식 function
+import style from "./Welcome.module.css";
 const Welcome = () => {
     return(
-        <h2>Welcome</h2>
+        <div>
+            <h2 className={style.fg}>Welcome</h2>
+            <h2 className={style.box}></h2>
+        </div>
     )
 }
 
