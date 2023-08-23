@@ -6,10 +6,13 @@
 import Hello from "./component/Hello";
 import styles from './App.css';
 import { useState } from "react";
+import Header from "./component/Header";
+import DayList from "./component/DayList";
+import Day from "./component/Day"
 
-const heavyWork = () =>{
-  console.log("heavyWork");
-}
+// const heavyWork = () =>{
+//   console.log("heavyWork");
+// }
 
 function App() {
  
@@ -61,29 +64,85 @@ function App() {
   //   const changeName2 = changeName2 === 'hong' ? 'kim' : 'hong'
   //   setChangeNmae2(changeName2);
 
-  const[names, setNames] = useState(['홍길동','임꺽정']);
-  const[input, setInput] = useState('');
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
-  }
-  const handleUpload = () => {
-    // 이전 상태값에 현재값을 추가한다
-    // prevState: 이전 state 상태값을 기억하고 있는 변수
-    setNames((prevState) => {
-      return ([...prevState, input])
-    });
-  }
+  // const[names, setNames] = useState(['홍길동','임꺽정']);
+  // const[input, setInput] = useState('');
+  // const handleInputChange = (e) => {
+  //   setInput(e.target.value);
+  // }
+  // const handleUpload = () => {
+  //   // 이전 상태값에 현재값을 추가한다
+  //   // prevState: 이전 state 상태값을 기억하고 있는 변수
+  //   setNames((prevState) => {
+  //     return ([...prevState, input])
+  //   });
+  // }
+
+  // function Header(props){
+  //   return <header>
+  //     <h1><a href = '/'>{props.title}</a></h1>
+  //   </header>
+  // }
+  
+  // function Article(props){
+  //   return(
+  //     <article>
+  //       <h2>{props.title}</h2>
+  //       {props.body}
+  //     </article>
+  //   )
+  // }
+  
+  //   function Nav(){
+  //     const arr =[];
+  //       for (let i = 0; i < props.topics.length; i++) {
+  //         let t = props.topics[i];
+  //         arr.push(<li>{t.title}</li>);
+  //       }
+  //     return <nav>
+  //       <ol>
+  //         {arr}
+  //       </ol>
+  //     </nav>
+  //   }
+
+  //   function App(){
+  //     const topics = [
+  //       {id:1, title:'HTML', body:'html'},
+  //       {id:2, title:'CSS', body:'Cascding'},
+  //       {id:3, title:'JS', body:'java'}
+  //     ]
+  //   }
 
   return (
     <div className="App">
-      <input type="text" value={input} onChange={handleInputChange}/>
-      <button onClick={handleUpload}>upload</button>
-      {/* 배열 출력 */}
-      {/* 배열 하나씩 호출하기 */}
-      {names.map((name,idx) => {
-        return <p key={idx}>{name}</p>
-      })}
+      <Header/>
+      <DayList/>
+      <Day/>
     </div>
+    // <div className="App">
+    //   <Header title="REACT"/>
+    //   <Nav topics={topics}/>
+    //   <Article title ="Welcome" body ="Hello. Web"/>
+    //   <Article title ="Hi" body ="Hello. React"/>
+    // </div>
+
+    // <div className="App">
+    //   <h2>props: properties</h2>
+    //   {/* 컴포넌트에 속성을 부여: proper */}
+    //   <Hello age = {10}/>
+    //   <Hello age = {20}/>
+    //   <Hello age = {30}/>
+    // </div>
+
+    // <div className="App">
+    //   {/* <input type="text" value={input} onChange={handleInputChange}/>
+    //   <button onClick={handleUpload}>upload</button>
+    //   {/* 배열 출력 */}
+    //   {/* 배열 하나씩 호출하기 */}
+    //   {names.map((name,idx) => {
+    //     return <p key={idx}>{name}</p>
+    //   })} */}
+    // </div>
 
     // <div className="App">
     //   <Hello/>
