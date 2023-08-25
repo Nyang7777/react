@@ -12,6 +12,7 @@ import Day from "./component/Day"
 import { BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Main01 from "./component/Main01";
 import Main02 from "./component/Main02";
+import Main03 from "./component/Main03";
 import EmptyPage from "./component/EmptyPage";
 
 // const heavyWork = () =>{
@@ -125,11 +126,13 @@ function App() {
       <hr/>
       <button><Link to="/main01">Main01</Link></button>
       <button><Link to="/main02">Main02</Link></button>
+      <button><Link to="/main03">Main03</Link></button>
     </div>
     <Routes>
       <Route path="/" />
       <Route path="/main01" element={<Main01/>} />
       <Route path="/main02" element={<Main02/>} />
+      <Route path="/main03" element={<Main03/>} />
       <Route path="/day/:day" element={<Day/>} />
       <Route path="/dayList" element={<DayList/>} />
       {/* 이 외에 url이 들어오면 받아들이는 페이지 */}
