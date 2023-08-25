@@ -128,6 +128,17 @@ export default function Main02() {
             e.preventDefault();
             setMode('UPDATE');
         }}>Update</a></li>
+        <li><input type="button" value="Delete" onClick={()=>{
+            // 선택한 객체를 뺀 나머지를 담아서 다시 보여준다
+            const newTops = [];
+            for (let i = 0; i < top.length; i++) {
+                if(top[i].id !==Number(id)){
+                    newTops.push(top[i]);
+                }
+            }
+            setTop(newTops);
+            
+        }}/></li>
        </>
 
     }else if(mode === 'CREATE'){
