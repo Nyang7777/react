@@ -9,6 +9,10 @@ import { useState } from "react";
 import Header from "./component/Header";
 import DayList from "./component/DayList";
 import Day from "./component/Day"
+import { BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import Main01 from "./component/Main01";
+import Main02 from "./component/Main02";
+import EmptyPage from "./component/EmptyPage";
 
 // const heavyWork = () =>{
 //   console.log("heavyWork");
@@ -114,11 +118,24 @@ function App() {
   //   }
 
   return (
+  // 1.App 를 BrowserRouter로 감싼다
+  <BrowserRouter>
     <div className="App">
-      <Header/>
-      <DayList/>
-      <Day/>
+      <h1>react 연습</h1>
+      <hr/>
+      <button><Link to="/main01">Main01</Link></button>
+      <button><Link to="/main02">Main02</Link></button>
     </div>
+    <Routes>
+      <Route path="/" />
+      <Route path="/main01" element={<Main01/>} />
+      <Route path="/main02" element={<Main02/>} />
+      <Route path="/day/:day" element={<Day/>} />
+      <Route path="/dayList" element={<DayList/>} />
+      {/* 이 외에 url이 들어오면 받아들이는 페이지 */}
+      <Route path="/*" element={<EmptyPage/>} />
+    </Routes>
+  </BrowserRouter>
     // <div className="App">
     //   <Header title="REACT"/>
     //   <Nav topics={topics}/>
